@@ -75,7 +75,7 @@
         </nav>
         <div class="util">
           <div class="language">
-            <button>language</button>
+            <button>KOR</button>
             <ul>
               <li><a href="">eng</a></li>
               <li><a href="">kor</a></li>
@@ -84,5 +84,32 @@
         </div>
       </div>
     </header>
+    <div id="main-visual">
+      <div class="mask">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide visual01">
+            <div class="img"></div>
+          </li>
+          <li class="swiper-slide visual02">
+            <div class="img"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const gnb = document.querySelector("#gnb");
+      const header = document.querySelector("#header");
+      gnb.addEventListener("mouseenter", function () {
+        header.classList.add("on");
+      });
+      gnb.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
+      });
+
+      new Swiper("#main-visual .mask", {
+        effect: "fade",
+        loop: true,
+      });
+    </script>
   </body>
 </html>
