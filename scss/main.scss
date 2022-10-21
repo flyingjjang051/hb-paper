@@ -6,6 +6,7 @@
 #main-visual {
   height: 100vh;
   li {
+    position: relative;
     &.visual01 .img {
       background-image: url("../images/main/mv_01.jpg");
     }
@@ -25,6 +26,25 @@
       transform: scale(1.2);
       transition: all 5s ease;
       transition-delay: 0.5s;
+    }
+    .txt {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: $h3;
+      color: #fff;
+      z-index: 2;
+      //width: 100%;
+      //transform: translateX(-50%) translateY(-50%);
+      //transform: translateY(-50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      strong {
+        font-weight: 700;
+        font-size: $h1 * 1.25;
+        margin-top: 30px;
+        display: block;
+      }
     }
   }
 }

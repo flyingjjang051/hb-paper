@@ -1,6 +1,9 @@
 #main-visual {
   height: 100vh;
 }
+#main-visual li {
+  position: relative;
+}
 #main-visual li.visual01 .img {
   background-image: url("../images/main/mv_01.jpg");
 }
@@ -18,4 +21,20 @@
   transform: scale(1.2);
   transition: all 5s ease;
   transition-delay: 0.5s;
+}
+#main-visual li .txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 24px;
+  color: #fff;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#main-visual li .txt strong {
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 30px;
+  display: block;
 }
