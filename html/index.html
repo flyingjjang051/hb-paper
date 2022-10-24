@@ -109,72 +109,100 @@
 
       const gnb = document.querySelector("#gnb");
       const header = document.querySelector("#header");
+
+      const visualTL = gsap.timeline();
+
+      // 함수 표현식(expression)
+      // 경력자 vs 신입
+      const visualTxtAni02 = function () {
+        visualTL
+          .from("#main-visual .swiper-slide-active .sub .char", {
+            y: -100,
+            opacity: 0,
+            ease: "back",
+            duration: 1,
+            stagger: {
+              each: 0.02,
+            },
+          })
+          .from(
+            "#main-visual .swiper-slide-active .main .char",
+            {
+              x: 100,
+              opacity: 0,
+              stagger: {
+                each: 0.1,
+              },
+            },
+            ">-0.5"
+          );
+      };
+
+      // 익명함수 call back 함수
+
+      // const headerOn = function () {
+      //   header.classList.add("on");
+      // };
+      // const headerOff = function () {
+      //   header.classList.remove("on");
+      // };
+
+      // gnb.addEventListener("mouseenter", headerOn);
+      // gnb.addEventListener("mouseleave", headerOff);
+
       gnb.addEventListener("mouseenter", function () {
         header.classList.add("on");
       });
       gnb.addEventListener("mouseleave", function () {
         header.classList.remove("on");
       });
-      const visual01TL = gsap.timeline();
-      const visual02TL = gsap.timeline();
+
+      //비동기 (asynchronous)
+
       new Swiper("#main-visual .mask", {
         effect: "fade",
+        initialSlide: 0,
         //loop: true,
         on: {
+          slideChange: function () {
+            visualTxtAniReset();
+          },
           slideChangeTransitionEnd: function (swiper) {
-            if (swiper.realIndex === 0) {
-              visual01TL.restart();
-              visual02TL.pause(0);
-            } else {
-              visual02TL.restart();
-              visual01TL.pause(0);
-            }
+            visualTxtAni();
           },
         },
       });
+      visualTxtAniReset();
+      visualTxtAni();
 
-      visual01TL
-        .from("#main-visual .visual01 .sub .char", {
-          y: -100,
-          opacity: 0,
-          ease: "back",
-          duration: 1,
-          stagger: {
-            each: 0.02,
-          },
-        })
-        .from(
-          "#main-visual .visual01 .main .char",
-          {
-            x: 100,
-            opacity: 0,
+      // 함수를 선언한다.  function declation  문장
+      function visualTxtAniReset() {
+        gsap.set("#main-visual li .sub .char", { opacity: 0, y: -100 });
+        gsap.set("#main-visual li .main .char", { opacity: 0, x: 100 });
+      }
+      function visualTxtAni() {
+        visualTL
+          .to("#main-visual .swiper-slide-active .sub .char", {
+            y: 0,
+            opacity: 1,
+            ease: "back",
+            duration: 1,
             stagger: {
-              each: 0.1,
+              each: 0.02,
             },
-          },
-          ">-0.5"
-        );
-      visual02TL
-        .from("#main-visual .visual02 .sub .char", {
-          y: -100,
-          opacity: 0,
-          ease: "back",
-          duration: 1,
-          stagger: {
-            each: 0.02,
-          },
-        })
-        .from(
-          "#main-visual .visual02 .main .char",
-          {
-            x: 100,
-            opacity: 0,
-            stagger: {
-              each: 0.1,
+          })
+          .to(
+            "#main-visual .swiper-slide-active .main .char",
+            {
+              x: 0,
+              opacity: 1,
+              stagger: {
+                each: 0.1,
+              },
             },
-          },
-          ">-0.5"
-        );
+            ">-0.5"
+          );
+      }
     </script>
   </body>
 </html>
