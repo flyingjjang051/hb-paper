@@ -1,5 +1,6 @@
 #main-visual {
   height: 100vh;
+  overflow: hidden;
 }
 #main-visual li {
   position: relative;
@@ -37,4 +38,69 @@
   font-size: 60px;
   margin-top: 30px;
   display: block;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.section .title-box {
+  margin-bottom: 50px;
+}
+.section .title-box h2 {
+  font-size: 20px;
+  color: #0e9447;
+  font-weight: 500;
+}
+.section .title-box p {
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 30px;
+  line-height: 1.25;
+}
+
+#business .container {
+  position: relative;
+}
+#business ul {
+  display: flex;
+  justify-content: space-between;
+}
+#business ul li:nth-last-child(1) {
+  margin-top: -50px;
+}
+#business ul li img {
+  border-radius: 20px;
+}
+#business ul li .txt {
+  margin-top: 40px;
+}
+#business ul li .txt h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+#business ul li .txt p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+#business .circle-txt {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  color: #ccc;
+  animation: circle-ani 20s linear infinite;
+}
+
+@keyframes circle-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }

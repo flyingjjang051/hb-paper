@@ -5,6 +5,8 @@
 
 #main-visual {
   height: 100vh;
+  overflow: hidden;
+
   li {
     position: relative;
     &.visual01 .img {
@@ -46,5 +48,73 @@
         display: block;
       }
     }
+  }
+}
+.section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .title-box {
+    margin-bottom: 50px;
+    h2 {
+      font-size: $h4;
+      color: $main-color;
+      font-weight: 500;
+    }
+    p {
+      font-size: $h2;
+      font-weight: 500;
+      margin-top: 30px;
+      line-height: 1.25;
+    }
+  }
+}
+#business {
+  .container {
+    position: relative;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      &:nth-last-child(1) {
+        margin-top: -50px;
+      }
+      img {
+        border-radius: 20px;
+      }
+      .txt {
+        margin-top: 40px;
+        h3 {
+          font-size: $h3;
+          font-weight: 500;
+        }
+        p {
+          font-size: 18px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .circle-txt {
+    font-size: $h2;
+    font-weight: 500;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    color: #ccc;
+    //text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    animation: circle-ani 20s linear infinite;
+  }
+}
+
+@keyframes circle-ani {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }

@@ -23,6 +23,7 @@
     <script src="../js/gsap/ScrollToPlugin.min.js"></script>
     <script src="../js/splitting.min.js"></script>
     <script src="../js/aos.js"></script>
+    <script src="../js/circletype.min.js"></script>
   </head>
   <body>
     <header id="header">
@@ -104,6 +105,40 @@
         </ul>
       </div>
     </div>
+
+    <section id="business" class="section">
+      <div class="container">
+        <div class="title-box">
+          <h2>BUSINESS AREA</h2>
+          <p>
+            PFAS Free, Repulpable, Compostable의 가치는 <br />
+            우리 HB PAPER가 나아가고자 하는 사업방향입니다.
+          </p>
+        </div>
+        <ul>
+          <li>
+            <a href="">
+              <img src="../images/main/main_01.jpg" alt="" />
+              <div class="txt">
+                <h3>종이가공</h3>
+                <p>식품포장 · 테이크아웃 · 이커머스</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="../images/main/main_02.jpg" alt="" />
+              <div class="txt">
+                <h3>특수지</h3>
+                <p>친환경 코팅 · 친환경 인쇄</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="circle-txt">be nature, be smart</div>
+      </div>
+    </section>
+
     <script>
       Splitting();
 
@@ -203,6 +238,11 @@
             ">-0.5"
           );
       }
+
+      const circleTxt = document.querySelector("#business .circle-txt");
+
+      const circleType = new CircleType(circleTxt);
+      circleType.radius(170).dir(1);
     </script>
   </body>
 </html>
