@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../css/splitting.css" />
     <link rel="stylesheet" href="../css/aos.css" />
     <link rel="stylesheet" href="../css/svg.css" />
+    <link rel="stylesheet" href="../css/fullpage.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <script src="https://kit.fontawesome.com/08ebc00fc6.js" crossorigin="anonymous"></script>
@@ -24,6 +25,7 @@
     <script src="../js/splitting.min.js"></script>
     <script src="../js/aos.js"></script>
     <script src="../js/circletype.min.js"></script>
+    <script src="../js/fullpage.min.js"></script>
   </head>
   <body>
     <header id="header">
@@ -85,60 +87,60 @@
         </div>
       </div>
     </header>
-    <div id="main-visual">
-      <div class="mask">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide visual01">
-            <div class="img"></div>
-            <div class="txt" data-splitting>
-              <p class="sub">자연의 선순환을 꿈꾸며 친환경 포장 문화를 만들어가는 기업</p>
-              <p class="main"><strong>HB PAPER</strong></p>
-            </div>
-          </li>
-          <li class="swiper-slide visual02">
-            <div class="img"></div>
-            <div class="txt" data-splitting>
-              <p class="sub">그 소중한 가치를 알기에 우리는 돌아가려고 합니다.</p>
-              <p class="main"><strong>자연으로, 스마트하게</strong></p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <section id="business" class="section">
-      <div class="container">
-        <div class="title-box">
-          <h2>BUSINESS AREA</h2>
-          <p>
-            PFAS Free, Repulpable, Compostable의 가치는 <br />
-            우리 HB PAPER가 나아가고자 하는 사업방향입니다.
-          </p>
+    <main id="main">
+      <div id="main-visual" class="section">
+        <div class="mask">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide visual01">
+              <div class="img"></div>
+              <div class="txt" data-splitting>
+                <p class="sub">자연의 선순환을 꿈꾸며 친환경 포장 문화를 만들어가는 기업</p>
+                <p class="main"><strong>HB PAPER</strong></p>
+              </div>
+            </li>
+            <li class="swiper-slide visual02">
+              <div class="img"></div>
+              <div class="txt" data-splitting>
+                <p class="sub">그 소중한 가치를 알기에 우리는 돌아가려고 합니다.</p>
+                <p class="main"><strong>자연으로, 스마트하게</strong></p>
+              </div>
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li>
-            <a href="">
-              <img src="../images/main/main_01.jpg" alt="" />
-              <div class="txt">
-                <h3>종이가공</h3>
-                <p>식품포장 · 테이크아웃 · 이커머스</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="../images/main/main_02.jpg" alt="" />
-              <div class="txt">
-                <h3>특수지</h3>
-                <p>친환경 코팅 · 친환경 인쇄</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <div class="circle-txt">be nature, be smart</div>
       </div>
-    </section>
-
+      <section id="business" class="section">
+        <div class="container">
+          <div class="title-box">
+            <h2>BUSINESS AREA</h2>
+            <p>
+              PFAS Free, Repulpable, Compostable의 가치는 <br />
+              우리 HB PAPER가 나아가고자 하는 사업방향입니다.
+            </p>
+          </div>
+          <ul>
+            <li>
+              <a href="">
+                <img src="../images/main/main_01.jpg" alt="" />
+                <div class="txt">
+                  <h3>종이가공</h3>
+                  <p>식품포장 · 테이크아웃 · 이커머스</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img src="../images/main/main_02.jpg" alt="" />
+                <div class="txt">
+                  <h3>특수지</h3>
+                  <p>친환경 코팅 · 친환경 인쇄</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="circle-txt">be nature, be smart</div>
+        </div>
+      </section>
+    </main>
     <script>
       Splitting();
 
@@ -243,6 +245,8 @@
 
       const circleType = new CircleType(circleTxt);
       circleType.radius(170).dir(1);
+
+      new fullpage("#main", {});
     </script>
   </body>
 </html>

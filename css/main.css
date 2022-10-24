@@ -1,7 +1,3 @@
-#main-visual {
-  height: 100vh;
-  overflow: hidden;
-}
 #main-visual li {
   position: relative;
 }
@@ -40,11 +36,6 @@
   display: block;
 }
 
-.section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-}
 .section .title-box {
   margin-bottom: 50px;
 }

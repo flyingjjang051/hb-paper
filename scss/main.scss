@@ -4,8 +4,8 @@
 @import "mixins";
 
 #main-visual {
-  height: 100vh;
-  overflow: hidden;
+  //height: 100vh;
+  //overflow: hidden;
 
   li {
     position: relative;
@@ -51,9 +51,9 @@
   }
 }
 .section {
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  // height: 100vh;
+  // display: flex;
+  // align-items: center;
   .title-box {
     margin-bottom: 50px;
     h2 {
