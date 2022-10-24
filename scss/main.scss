@@ -5,8 +5,10 @@
 
 #main-visual {
   //height: 100vh;
-  //overflow: hidden;
-
+  overflow: hidden;
+  .mask {
+    overflow: hidden;
+  }
   li {
     position: relative;
     &.visual01 .img {
@@ -22,10 +24,10 @@
     }
     .img {
       height: 100vh;
+      transform: scale(1.2);
       background-position: 50%;
       background-repeat: no-repeat;
       background-size: cover;
-      transform: scale(1.2);
       transition: all 5s ease;
       transition-delay: 0.5s;
     }
@@ -33,19 +35,19 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      font-size: $h3;
-      color: #fff;
       z-index: 2;
+      font-size: $h3;
+      text-align: center;
+      color: #fff;
       //width: 100%;
       //transform: translateX(-50%) translateY(-50%);
       //transform: translateY(-50%);
       transform: translate(-50%, -50%);
-      text-align: center;
       strong {
-        font-weight: 700;
-        font-size: $h1 * 1.25;
-        margin-top: 30px;
         display: block;
+        margin-top: 30px;
+        font-size: $h1 * 1.25;
+        font-weight: 700;
       }
     }
   }
@@ -58,18 +60,19 @@
     margin-bottom: 50px;
     h2 {
       font-size: $h4;
-      color: $main-color;
       font-weight: 500;
+      color: $main-color;
     }
     p {
+      margin-top: 30px;
       font-size: $h2;
       font-weight: 500;
-      margin-top: 30px;
       line-height: 1.25;
     }
   }
 }
 #business {
+  overflow: hidden;
   .container {
     position: relative;
   }
@@ -90,23 +93,48 @@
           font-weight: 500;
         }
         p {
-          font-size: 18px;
           margin-top: 20px;
+          font-size: 18px;
         }
       }
     }
   }
   .circle-txt {
+    position: absolute;
+    top: 0;
+    right: 80px;
     font-size: $h2;
     font-weight: 500;
+    color: #ccc;
     letter-spacing: 0.5em;
     text-transform: uppercase;
-    position: absolute;
-    right: 30px;
-    top: 0;
-    color: #ccc;
     //text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
     animation: circle-ani 20s linear infinite;
+  }
+}
+#product {
+  .title-box {
+    p {
+      font-size: $h4;
+    }
+    strong {
+      display: block;
+      margin-top: 50px;
+      font-size: $h2;
+      font-weight: 700;
+    }
+    a {
+      text-transform: uppercase;
+      display: block;
+      font-size: $h4;
+      font-weight: 500;
+      margin-top: 50px;
+      &:after {
+        content: "\f061";
+        font-family: "FontAwesome";
+        margin-left: 30px;
+      }
+    }
   }
 }
 

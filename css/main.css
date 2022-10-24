@@ -1,3 +1,9 @@
+#main-visual {
+  overflow: hidden;
+}
+#main-visual .mask {
+  overflow: hidden;
+}
 #main-visual li {
   position: relative;
 }
@@ -12,10 +18,10 @@
 }
 #main-visual li .img {
   height: 100vh;
+  transform: scale(1.2);
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  transform: scale(1.2);
   transition: all 5s ease;
   transition-delay: 0.5s;
 }
@@ -23,17 +29,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 24px;
-  color: #fff;
   z-index: 2;
-  transform: translate(-50%, -50%);
+  font-size: 24px;
   text-align: center;
+  color: #fff;
+  transform: translate(-50%, -50%);
 }
 #main-visual li .txt strong {
-  font-weight: 700;
-  font-size: 60px;
-  margin-top: 30px;
   display: block;
+  margin-top: 30px;
+  font-size: 60px;
+  font-weight: 700;
 }
 
 .section .title-box {
@@ -41,16 +47,19 @@
 }
 .section .title-box h2 {
   font-size: 20px;
-  color: #0e9447;
   font-weight: 500;
+  color: #0e9447;
 }
 .section .title-box p {
+  margin-top: 30px;
   font-size: 36px;
   font-weight: 500;
-  margin-top: 30px;
   line-height: 1.25;
 }
 
+#business {
+  overflow: hidden;
+}
 #business .container {
   position: relative;
 }
@@ -72,19 +81,41 @@
   font-weight: 500;
 }
 #business ul li .txt p {
-  font-size: 18px;
   margin-top: 20px;
+  font-size: 18px;
 }
 #business .circle-txt {
+  position: absolute;
+  top: 0;
+  right: 80px;
   font-size: 36px;
   font-weight: 500;
+  color: #ccc;
   letter-spacing: 0.5em;
   text-transform: uppercase;
-  position: absolute;
-  right: 30px;
-  top: 0;
-  color: #ccc;
   animation: circle-ani 20s linear infinite;
+}
+
+#product .title-box p {
+  font-size: 20px;
+}
+#product .title-box strong {
+  display: block;
+  margin-top: 50px;
+  font-size: 36px;
+  font-weight: 700;
+}
+#product .title-box a {
+  text-transform: uppercase;
+  display: block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+#product .title-box a:after {
+  content: "\f061";
+  font-family: "FontAwesome";
+  margin-left: 30px;
 }
 
 @keyframes circle-ani {
