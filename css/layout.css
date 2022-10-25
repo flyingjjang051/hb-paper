@@ -35,6 +35,15 @@ button {
   width: 100%;
   z-index: 99;
 }
+#header.color {
+  color: #111;
+}
+#header.color #logo a .logo-color {
+  opacity: 1;
+}
+#header.color #logo a .logo-white {
+  opacity: 0;
+}
 #header.on {
   height: 400px;
   background-color: #fff;

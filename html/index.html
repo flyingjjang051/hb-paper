@@ -495,14 +495,22 @@
         slidesPerView: 3,
         spaceBetween: 30,
       });
-      
+
       window.addEventListener("scroll", function () {
         console.log(window.scrollY);
-      })
-      
-      
+      });
+
       new fullpage("#main", {
         scrollOverflow: false,
+        onLeave: function (origin, destination, direction, trigger) {
+          console.log(origin);
+          if (origin.index === 0) {
+            header.classList.add("color");
+          }
+          if (origin.index === 1 && direction === "up") {
+            header.classList.remove("color");
+          }
+        },
       });
     </script>
   </body>

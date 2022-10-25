@@ -34,6 +34,19 @@ button {
   position: fixed;
   width: 100%;
   z-index: 99;
+  &.color {
+    color: #111;
+    #logo {
+      a {
+        .logo-color {
+          opacity: 1;
+        }
+        .logo-white {
+          opacity: 0;
+        }
+      }
+    }
+  }
   &.on {
     height: 400px;
     background-color: #fff;
