@@ -244,6 +244,18 @@
             </li>
           </ul>
         </div>
+        <div class="control-box">
+          <div class="container">
+            <div class="pagination-box">
+              <div class="pagination"></div>
+              <div class="line"></div>
+            </div>
+            <div class="btns">
+              <button class="btn btn-play"><i class="fa-solid fa-play"></i></button>
+              <button class="btn btn-pause"><i class="fa-solid fa-pause"></i></button>
+            </div>
+          </div>
+        </div>
         <div class="circle-txt">be nature, be smart</div>
       </section>
     </main>
@@ -357,8 +369,14 @@
       makeCircleTxt("#product .circle-txt");
 
       const productTL = gsap.timeline();
-      new Swiper("#product .mask", {
+      const productSlider = new Swiper("#product .mask", {
         effect: "fade",
+        pagination: {
+          el: "#product .pagination",
+        },
+        autoplay: {
+          delay: 5000,
+        },
         on: {
           slideChange: function () {
             gsap.set("#product li .title-box h2", { opacity: 0, y: 100 });
@@ -375,6 +393,24 @@
               .to("#product .swiper-slide-active .title-box a", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15");
           },
         },
+      });
+
+      const btnPlay = document.querySelector("#product .btn-play");
+      const btnPause = document.querySelector("#product .btn-pause");
+
+      btnPause.addEventListener("click", function () {
+        btnPause.style.display = "none";
+        btnPlay.style.display = "block";
+        productSlider.autoplay.stop();
+        //btnPause.style["font-size"]="none";
+        //btnPause.style.fontSize="35px";
+      });
+      btnPlay.addEventListener("click", function () {
+        btnPause.style.display = "block";
+        btnPlay.style.display = "none";
+        productSlider.autoplay.start();
+        //btnPause.style["font-size"]="none";
+        //btnPause.style.fontSize="35px";
       });
 
       new fullpage("#main", {
