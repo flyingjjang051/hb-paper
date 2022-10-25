@@ -56,6 +56,18 @@
   font-weight: 500;
   line-height: 1.25;
 }
+.section .circle-txt {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 80px;
+  font-size: 36px;
+  font-weight: 500;
+  color: #ccc;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  animation: circle-ani 20s linear infinite;
+}
 
 #business {
   overflow: hidden;
@@ -84,17 +96,6 @@
   margin-top: 20px;
   font-size: 18px;
 }
-#business .circle-txt {
-  position: absolute;
-  top: 0;
-  right: 80px;
-  font-size: 36px;
-  font-weight: 500;
-  color: #ccc;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  animation: circle-ani 20s linear infinite;
-}
 
 #product .title-box p {
   font-size: 20px;
@@ -116,6 +117,37 @@
   content: "\f061";
   font-family: "FontAwesome";
   margin-left: 30px;
+}
+#product li {
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+#product .product01 {
+  background-image: url("../images/main/ms3_01.jpg");
+}
+#product .product02 {
+  background-image: url("../images/main/ms3_02.jpg");
+}
+#product .product03 {
+  background-image: url("../images/main/ms3_03.jpg");
+}
+#product .product04 {
+  background-image: url("../images/main/ms3_04.jpg");
+}
+#product .product05 {
+  background-image: url("../images/main/ms3_05.jpg");
+}
+#product .product06 {
+  background-image: url("../images/main/ms3_06.jpg");
+}
+#product .product07 {
+  background-image: url("../images/main/ms3_07.jpg");
+}
+#product .circle-txt {
+  right: 300px;
+  top: 200px;
 }
 
 @keyframes circle-ani {

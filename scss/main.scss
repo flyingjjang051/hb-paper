@@ -70,6 +70,19 @@
       line-height: 1.25;
     }
   }
+  .circle-txt {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 80px;
+    font-size: $h2;
+    font-weight: 500;
+    color: #ccc;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    //text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    animation: circle-ani 20s linear infinite;
+  }
 }
 #business {
   overflow: hidden;
@@ -99,18 +112,6 @@
       }
     }
   }
-  .circle-txt {
-    position: absolute;
-    top: 0;
-    right: 80px;
-    font-size: $h2;
-    font-weight: 500;
-    color: #ccc;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    //text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-    animation: circle-ani 20s linear infinite;
-  }
 }
 #product {
   .title-box {
@@ -135,6 +136,21 @@
         margin-left: 30px;
       }
     }
+  }
+  li {
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  @for $i from 1 through 7 {
+    .product0#{$i} {
+      background-image: url("../images/main/ms3_0#{$i}.jpg");
+    }
+  }
+  .circle-txt {
+    right: 300px;
+    top: 200px;
   }
 }
 

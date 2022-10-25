@@ -26,6 +26,7 @@
     <script src="../js/aos.js"></script>
     <script src="../js/circletype.min.js"></script>
     <script src="../js/fullpage.min.js"></script>
+    <!-- <script src="../js/common.js"></script> -->
   </head>
   <body>
     <header id="header">
@@ -161,7 +162,7 @@
               <div class="container">
                 <div class="title-box">
                   <h2>product</h2>
-                  <strong>종이식품용기</strong>
+                  <strong>종이봉투</strong>
                   <p>
                     자체개발한 PFAS free 소재의 수용성 코팅을 적용한<br />
                     다양한 형태의 종이식품용기는 코팅 마감에 균열이 없어<br />
@@ -230,19 +231,20 @@
             <li class="swiper-slide product07">
               <div class="container">
                 <div class="title-box">
-                  <h2>product</h2>
-                  <strong>종이식품용기</strong>
-                  <p>
+                  <h2 class="move-item">product</h2>
+                  <strong class="move-item">종이식품용기</strong>
+                  <p class="move-item">
                     자체개발한 PFAS free 소재의 수용성 코팅을 적용한<br />
                     다양한 형태의 종이식품용기는 코팅 마감에 균열이 없어<br />
                     어떠한 식품도 안전하게 포장할 수 있습니다.
                   </p>
-                  <a href="">more view</a>
+                  <a href="" class="move-item">more view</a>
                 </div>
               </div>
             </li>
           </ul>
         </div>
+        <div class="circle-txt">be nature, be smart</div>
       </section>
     </main>
     <script>
@@ -345,10 +347,35 @@
           );
       }
 
-      const circleTxt = document.querySelector("#business .circle-txt");
+      // 함수 선언문
+      function makeCircleTxt(txt, _radius = 170, _dir = 1) {
+        const circleTxt = document.querySelector(txt);
+        const circleType = new CircleType(circleTxt);
+        circleType.radius(_radius).dir(_dir);
+      }
+      makeCircleTxt("#business .circle-txt");
+      makeCircleTxt("#product .circle-txt");
 
-      const circleType = new CircleType(circleTxt);
-      circleType.radius(170).dir(1);
+      const productTL = gsap.timeline();
+      new Swiper("#product .mask", {
+        effect: "fade",
+        on: {
+          slideChange: function () {
+            gsap.set("#product li .title-box h2", { opacity: 0, y: 100 });
+            gsap.set("#product li .title-box strong", { opacity: 0, y: 100 });
+            gsap.set("#product li .title-box p", { opacity: 0, y: 100 });
+            gsap.set("#product li .title-box a", { opacity: 0, y: 100 });
+          },
+          // > end기준  <  start 기준
+          slideChangeTransitionEnd: function () {
+            productTL
+              .to("#product .swiper-slide-active .title-box h2", { opacity: 1, y: 0, ease: "back", duration: 1 })
+              .to("#product .swiper-slide-active .title-box strong", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15")
+              .to("#product .swiper-slide-active .title-box p", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15")
+              .to("#product .swiper-slide-active .title-box a", { opacity: 1, y: 0, ease: "back", duration: 1 }, "<+0.15");
+          },
+        },
+      });
 
       new fullpage("#main", {
         scrollOverflow: false,
