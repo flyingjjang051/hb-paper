@@ -179,3 +179,32 @@ button {
     }
   }
 }
+
+#footer {
+  background-color: #333;
+  color: #fff;
+  .util-box {
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    .container {
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+        li {
+          margin-right: 30px;
+          font-weight: 500;
+          &:nth-last-child(1) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .addr-box {
+    padding: 30px 0;
+    address {
+      margin-bottom: 30px;
+    }
+  }
+}
