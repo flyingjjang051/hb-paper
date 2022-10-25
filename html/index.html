@@ -264,6 +264,7 @@
 
       const gnb = document.querySelector("#gnb");
       const header = document.querySelector("#header");
+      const line = document.querySelector("#product .line");
 
       const visualTL = gsap.timeline();
 
@@ -378,7 +379,10 @@
           delay: 5000,
         },
         on: {
-          slideChange: function () {
+          slideChange: function (swiper) {
+            //line.style.width = `${(swiper.realIndex / 6) * 100}%`;
+            //gsap.set(line, { width: `${(swiper.realIndex / 6) * 100}%` });
+            gsap.set(line, { scaleX: swiper.realIndex / 6 });
             gsap.set("#product li .title-box h2", { opacity: 0, y: 100 });
             gsap.set("#product li .title-box strong", { opacity: 0, y: 100 });
             gsap.set("#product li .title-box p", { opacity: 0, y: 100 });

@@ -179,6 +179,7 @@
   margin-right: 50px;
   background-color: #fff;
   border: 3px solid #111;
+  transition: background-color 5s linear;
 }
 #product .control-box .pagination .swiper-pagination-bullet-active {
   background-color: #111;
@@ -195,6 +196,8 @@
   background-color: #111;
   top: 50%;
   margin-top: -1px;
+  transform-origin: 0 50%;
+  transition: all 5s linear;
 }
 
 @keyframes circle-ani {
