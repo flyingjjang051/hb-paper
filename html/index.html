@@ -518,6 +518,15 @@
           }
           if (destination.index === 0) {
             header.classList.remove("color");
+            fpNav.classList.remove("color");
+          }
+          if (destination.index !== 0) {
+            fpNav.classList.add("color");
+          }
+          if (destination.isLast) {
+            fpNav.classList.add("last");
+          } else {
+            fpNav.classList.remove("last");
           }
         },
         afterLoad: function (origin, destination, direction, trigger) {
@@ -526,6 +535,8 @@
           }
         },
       });
+      const fpNav = document.querySelector("#fp-nav");
+      console.log("🚀 ~ file: index.html ~ line 510 ~ fpNav", fpNav);
     </script>
   </body>
 </html>
