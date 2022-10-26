@@ -507,19 +507,21 @@
                 .from("#business ul li",{opacity:0,y:100,stagger:0.1})
 
       new fullpage("#main", {
+        navigation: true,
+        navigationTooltips: ["intro", "business", "product", "news", "footer"],
         scrollOverflow: false,
         onLeave: function (origin, destination, direction, trigger) {
-          console.log(origin);
-          if (origin.index === 0) {
+          console.log(destination);
+          if (destination.index === 1) {
             header.classList.add("color");
             businessTL.restart();
           }
-          if (origin.index === 1 && direction === "up") {
+          if (destination.index === 0) {
             header.classList.remove("color");
           }
         },
         afterLoad: function (origin, destination, direction, trigger) {
-          console.log(destination.index);
+          //console.log("afterload");
           if (destination.index === 1) {
           }
         },
