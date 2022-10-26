@@ -28,8 +28,6 @@ button {
 }
 #header {
   height: 100px;
-  overflow: hidden;
-  transition: all 0.25s ease;
   color: #fff;
   position: fixed;
   width: 100%;
@@ -48,9 +46,11 @@ button {
     }
   }
   &.on {
-    height: 400px;
-    background-color: #fff;
     color: #111;
+    #gnb {
+      height: 400px;
+      background-color: #fff;
+    }
     #logo {
       a {
         .logo-color {
@@ -62,30 +62,11 @@ button {
       }
     }
   }
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 350px;
-    left: 0;
-    top: 100px;
-    background-color: #eee;
-  }
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    position: absolute;
-    top: 100px;
-    pointer-events: none;
-  }
   .container {
     display: flex;
     justify-content: center;
     position: relative;
+    z-index: 2;
   }
   #logo {
     position: absolute;
@@ -104,8 +85,17 @@ button {
     }
   }
   #gnb {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.25s ease;
     .list {
       display: flex;
+      z-index: 2;
+      position: relative;
       > li {
         text-align: center;
         &:hover {
@@ -146,6 +136,27 @@ button {
           }
         }
       }
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 350px;
+      left: 0;
+      top: 100px;
+      background-color: #eee;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #ccc;
+      position: absolute;
+      top: 100px;
+      pointer-events: none;
     }
   }
   .util {
